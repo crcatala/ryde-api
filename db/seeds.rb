@@ -10,11 +10,11 @@ end
 users.each do |user|
   next unless user.payment_methods.empty?
 
-  3.times do
+  PaymentMethod::VALID_CARD_TYPES.each do |card_type|
     PaymentMethod.create!(
       user: user,
       payment_type: PaymentMethod::VALID_PAYMENT_TYPES.sample,
-      card_type: PaymentMethod::VALID_CARD_TYPES.sample,
+      card_type: card_type,
       last_four: rand(9999).to_s.rjust(4, "0"),
     )
   end

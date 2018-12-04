@@ -3,7 +3,7 @@ class TripsController < ApplicationController
 
   # GET /trips
   def index
-    @trips = Trip.includes(:car, :driver, :payment_method)
+    @trips = Trip.includes(:car, :driver, :payment_method).order(pickup_time: :desc)
 
     render json: @trips
   end

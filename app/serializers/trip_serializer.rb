@@ -13,6 +13,10 @@ class TripSerializer < ActiveModel::Serializer
     }
   end
 
+  def fare
+    object.fare.to_f
+  end
+
   def driver
     {
       id: object.driver.id,
