@@ -10,12 +10,14 @@ end
 users.each do |user|
   next unless user.payment_methods.empty?
 
-  PaymentMethod.create!(
-    user: user,
-    payment_type: PaymentMethod::VALID_PAYMENT_TYPES.sample,
-    card_type: PaymentMethod::VALID_CARD_TYPES.sample,
-    last_four: rand(9999).to_s.rjust(4, "0"),
-  )
+  3.times do
+    PaymentMethod.create!(
+      user: user,
+      payment_type: PaymentMethod::VALID_PAYMENT_TYPES.sample,
+      card_type: PaymentMethod::VALID_CARD_TYPES.sample,
+      last_four: rand(9999).to_s.rjust(4, "0"),
+    )
+  end
 end
 
 drivers = Driver.all
