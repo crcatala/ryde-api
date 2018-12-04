@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  card_type: MyString
+  last_four: 1
+  payment_type: MyString
+
+two:
+  user: two
+  card_type: MyString
+  last_four: 1
+  payment_type: MyString
