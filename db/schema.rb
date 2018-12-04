@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2018_12_04_004829) do
   create_table "payment_methods", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "card_type", null: false
-    t.integer "last_four", null: false
+    t.string "last_four", null: false
     t.string "payment_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
